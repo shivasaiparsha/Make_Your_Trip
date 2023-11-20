@@ -46,10 +46,13 @@ public class TransportService {
         List<Routes> routesList=routeRepository.findRoutesByFromCityAndToCityAndModeOfTransport(searchFlightDto.getFromCity(),searchFlightDto.getToCity(),ModeOfTransport.Flight);
 
         List<FlightResult> flightResults=new ArrayList<>();
+git
 
         for(Routes route : routesList)
         {
             List<Transport> transportList=route.getTransportList();
+
+
             for(Transport transport : transportList)
             {
                  if(transport.getJourneyDate().equals(searchFlightDto.getJourneyDate()))

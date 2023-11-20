@@ -34,7 +34,7 @@ public class BookingService {
 
     public List<AvailableSeatResponseDto> getAvailableSeatsResponse(GetAvailableSeatsDto getAvailableSeatsDto)
     {
-          List<Booking>  bookingsList = bookingRepository.findBOokingsByTransportIdAndJourneyDate(getAvailableSeatsDto.getTransportId(),getAvailableSeatsDto.getJourneyDate());
+          List<Booking>  bookingsList = bookingRepository.findBookingsByTransportIdAndJourneyDate(getAvailableSeatsDto.getTransportId(),getAvailableSeatsDto.getJourneyDate());
 
           Set<String> booked = new TreeSet<>();
 
@@ -83,7 +83,7 @@ public class BookingService {
 
         TicketEntity ticketEntity=createTicket(transport, booking);
 
-//         bookingRepository.save(booking);
+         bookingRepository.save(booking);
          transport.getBookingsList().add(booking);
          transportRepository.save(transport);
          user.getBookingList().add(booking);

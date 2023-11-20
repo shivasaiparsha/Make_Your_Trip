@@ -23,6 +23,6 @@ public class SeatController {
     public ResponseEntity<String> addFlightSeats(@RequestBody AddFlightSeatDto addFlightSeatDto)
     {
         String message = seatService.addFlightSeats(addFlightSeatDto);
-        return new ResponseEntity<>(message, HttpStatus.OK);
+        return new ResponseEntity<>("flight added succesfully", HttpStatus.OK);
     }
 }

@@ -26,7 +26,7 @@ public class UserService {
         SimpleMailMessage mailMessage=new SimpleMailMessage();
         String body="Hi Welcome to MakeYourTrip \n"+"Make Youre Tours plans Here";
         mailMessage.setSubject("Make Your Trip");
-        mailMessage.setFrom("xyz@gmail.com");
+        mailMessage.setFrom("shivasaiparsha@gmail.com");
         mailMessage.setTo(user.getEmailId());
         mailMessage.setText(body);
         mailSender.send(mailMessage);

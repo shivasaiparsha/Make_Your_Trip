@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
-    @Query(value = "select * from booking where transportId=: transportIdInput and journeyDate",nativeQuery = true)
-    List<Booking> findBOokingsByTransportIdAndJourneyDate(Integer transportIdInput, LocalDate journeyDateInput);
+    @Query(value = "select * from booking where transportId= :transportIdInput and journeyDate=:journeyDateInput",nativeQuery = true)
+    List<Booking> findBookingsByTransportIdAndJourneyDate(Integer transportIdInput, LocalDate journeyDateInput);
 
 }
